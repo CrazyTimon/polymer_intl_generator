@@ -1,0 +1,1 @@
+{"SecondMsg":"i'm fine thanks and you","@SecondMsg":{"description":"SecondMsg answer","type":"text","placeholders":{}},"libmain_apphtml1":"hi, how are you {arg1}?","@libmain_apphtml1":{"description":"FirstMsg","type":"text","placeholders":{"arg1":{"example":"test1"},"arg2":{"example":"test3"}}}}

@@ -5,18 +5,28 @@ import 'dart:html';
 import 'package:paper_elements/paper_input.dart';
 import 'package:polymer/polymer.dart';
 import 'main_app_intl.dart';
+import 'package:intl/intl.dart';
 
 /// A Polymer `<main-app>` element.
 @CustomTag('main-app')
 class MainApp extends PolymerElement with IntlExtract{
   @observable String reversed = '';
-
+  @observable String test = '';
   String test1(arg){
     return "|$arg|";
   }
 
+  onTest1Click(_){
+    Intl.defaultLocale = 'SecondMsg';
+    test = SecondMsg();
+  }
+
   /// Constructor used to create instance of MainApp.
-  MainApp.created() : super.created();
+  MainApp.created() : super.created(){
+//        updateLocale('fr');
+//          Intl.defaultLocale = 'SecondMsg';
+          test = SecondMsg();
+  }
 
   void reverseText(Event event, Object object, PaperInput target) {
     reversed = target.value.split('').reversed.join('');
@@ -45,4 +55,10 @@ class MainApp extends PolymerElement with IntlExtract{
 //  ready() {
 //    super.ready();
 //  }
+  SecondMsg() => Intl.message(
+         "i'm fine thanks and you",
+         name: "SecondMsg",
+         desc: "SecondMsg answer",
+         args: [],
+         examples: {"arg1":"test1","arg2":"test3"});
 }
