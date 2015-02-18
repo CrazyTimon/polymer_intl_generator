@@ -4,11 +4,10 @@
 import 'dart:html';
 import 'package:paper_elements/paper_input.dart';
 import 'package:polymer/polymer.dart';
-import 'main_app_intl.dart';
 
 /// A Polymer `<main-app>` element.
 @CustomTag('main-app')
-class MainApp extends PolymerElement with IntlExtract{
+class MainApp extends PolymerElement{
   @observable String reversed = '';
 
   String test1(arg){
